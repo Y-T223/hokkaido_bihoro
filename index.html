@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>美幌博物館｜オホーツクの自然と暮らしを、ひとつの館で</title>
+<meta name="description" content="北海道美幌町の総合博物館。オホーツクの初夏を再現した道内最大級のジオラマ、ヒグマやキタキツネの親子の展示をご覧いただけます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c2a25;
+  --deep:#22332d;
+  --moss:#3a4f43;
+  --brass:#b8975a;
+  --brass-d:#8a6d3b;
+  --paper:#ece4d1;
+  --paper-2:#e2d8c0;
+  --text:#2b2a26;
+  --text-s:#5d584c;
+  --serif:"Shippori Mincho","Yu Mincho","Hiragino Mincho ProN","MS PMincho",serif;
+  --sans:"Zen Kaku Gothic New","Yu Gothic","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text);background:var(--paper);line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+.wrap{width:min(1080px,100% - 48px);margin-inline:auto}
+
+/* header */
+header.site{position:absolute;inset:0 0 auto 0;z-index:5;padding:20px 0}
+header.site .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.logo{font-family:var(--serif);color:var(--paper);font-size:1.05rem;letter-spacing:.2em;text-decoration:none}
+nav.gnav{display:flex;gap:28px}
+nav.gnav a{color:var(--paper);text-decoration:none;font-size:.88rem;letter-spacing:.12em;padding:4px 0;border-bottom:1px solid transparent}
+nav.gnav a:hover{border-color:var(--brass)}
+
+/* hero */
+.hero{background:var(--deep);color:var(--paper);padding:112px 0 88px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 20% 30%,rgba(184,151,90,.12),transparent 55%);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1fr 128px;gap:48px;align-items:stretch;position:relative}
+.case{border:1px solid var(--brass);padding:14px;position:relative}
+.case::after{content:"";position:absolute;inset:6px;border:1px solid rgba(184,151,90,.35);pointer-events:none}
+.case figure{aspect-ratio:16/9;background:var(--moss);overflow:hidden}
+.case img{width:100%;height:100%;object-fit:cover}
+.case figcaption{font-size:.78rem;color:#c9bf9f;margin-top:10px;letter-spacing:.08em}
+.hero-title{writing-mode:vertical-rl;font-family:var(--serif);font-weight:800;font-size:clamp(3rem,6.2vw,4.8rem);letter-spacing:.22em;line-height:1.2;justify-self:center;color:var(--paper)}
+.hero-lead{grid-column:1 / -1;display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end;margin-top:8px;padding-top:32px;border-top:1px solid rgba(184,151,90,.45)}
+.hero-lead p{font-family:var(--serif);font-size:clamp(1.15rem,2.2vw,1.55rem);line-height:2;max-width:30em}
+.btn{display:inline-block;background:var(--brass);color:var(--ink);text-decoration:none;font-weight:700;letter-spacing:.1em;padding:14px 30px;border:1px solid var(--brass);transition:background .2s,color .2s}
+.btn:hover{background:transparent;color:var(--brass)}
+.btn.line{background:transparent;color:var(--ink);border-color:var(--brass-d)}
+.btn.line:hover{background:var(--brass-d);color:var(--paper)}
+
+/* sections */
+section{padding:96px 0}
+.sec-head{margin-bottom:48px}
+.sec-head h2{font-family:var(--serif);font-weight:800;font-size:clamp(1.7rem,3.4vw,2.4rem);letter-spacing:.12em;line-height:1.5}
+.sec-head h2::after{content:"";display:block;width:56px;height:2px;background:var(--brass-d);margin-top:16px}
+.dark .sec-head h2::after{background:var(--brass)}
+
+/* about */
+.about .grid{display:grid;grid-template-columns:5fr 6fr;gap:64px;align-items:center}
+.about figure{aspect-ratio:4/5;background:var(--paper-2);overflow:hidden;border:1px solid var(--brass-d);padding:10px;background-clip:content-box}
+.about figure img{width:100%;height:100%;object-fit:cover}
+.about p+p{margin-top:1.2em}
+.about .lead{font-family:var(--serif);font-size:1.3rem;line-height:2;margin-bottom:1.2em}
+
+/* rooms */
+.rooms{background:var(--paper-2)}
+.rooms ul{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--brass-d);border-bottom:1px solid var(--brass-d)}
+.rooms li{padding:36px 28px 40px}
+.rooms li+li{border-left:1px solid rgba(138,109,59,.45)}
+.rooms h3{font-family:var(--serif);font-size:1.25rem;letter-spacing:.1em;margin-bottom:6px}
+.rooms .theme{color:var(--brass-d);font-weight:700;font-size:.92rem;margin-bottom:14px}
+.rooms li p{font-size:.95rem;color:var(--text-s)}
+.rooms .note{margin-top:20px;font-size:.88rem;color:var(--text-s)}
+
+/* feature */
+.feature{background:var(--deep);color:var(--paper)}
+.feature .grid{display:grid;grid-template-columns:6fr 5fr;gap:64px;align-items:center}
+.feature figure{aspect-ratio:3/2;background:var(--moss);overflow:hidden;border:1px solid var(--brass);padding:10px;background-clip:content-box}
+.feature figure img{width:100%;height:100%;object-fit:cover}
+.feature .lead{font-family:var(--serif);font-size:1.3rem;line-height:2;margin-bottom:1.2em}
+.feature p{color:#d9d0b6}
+
+/* strengths */
+.strengths ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;column-gap:56px;row-gap:8px}
+.strengths li{padding:28px 0 32px;border-top:1px solid var(--brass-d)}
+.strengths h3{font-family:var(--serif);font-size:1.25rem;letter-spacing:.08em;line-height:1.6;margin-bottom:10px}
+.strengths li p{font-size:.95rem;color:var(--text-s)}
+
+/* history */
+.history{background:var(--paper-2)}
+.history .grid{display:grid;grid-template-columns:5fr 6fr;gap:64px;align-items:start}
+.history .year{font-family:var(--serif);font-weight:800;font-size:clamp(3.4rem,8vw,5.6rem);line-height:1;color:var(--brass-d);letter-spacing:.04em}
+.history .year small{display:block;font-size:1rem;font-weight:600;letter-spacing:.2em;color:var(--text);margin-top:14px}
+.history .lead{font-family:var(--serif);font-size:1.25rem;line-height:2;margin-bottom:1.2em}
+.history p+p{margin-top:1.2em}
+.history a{color:var(--brass-d);text-underline-offset:3px}
+
+/* voice */
+.voices{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+.voice{border:1px solid var(--brass-d);padding:32px 30px;background:#f3ecdb}
+.stars{color:var(--brass-d);font-size:1.15rem;letter-spacing:.15em;margin-bottom:12px}
+.stars .off{color:#c9bd9d}
+.voice p{font-size:.95rem;white-space:pre-line}
+.voice .src{display:block;margin-top:16px;font-size:.8rem;color:var(--text-s)}
+
+/* info */
+.info{background:var(--paper-2)}
+dl.table{display:grid;grid-template-columns:11em 1fr;border-top:1px solid var(--brass-d)}
+dl.table dt,dl.table dd{padding:18px 8px;border-bottom:1px solid rgba(138,109,59,.45)}
+dl.table dt{font-family:var(--serif);font-weight:600;letter-spacing:.1em}
+dl.table dd a{color:var(--brass-d);text-underline-offset:3px;word-break:break-all}
+dl.table dd small{display:block;color:var(--text-s)}
+
+/* map */
+.map-box{border:1px solid var(--brass-d);padding:10px;background:#f3ecdb}
+.map-box iframe{width:100%;height:420px;border:0;display:block;filter:sepia(.25) saturate(.9)}
+.map-btn{text-align:center;margin-top:24px}
+.address{text-align:center;margin-top:16px;color:var(--text-s)}
+
+/* contact */
+.contact{background:var(--deep);color:var(--paper);text-align:center}
+.contact .sec-head h2::after{margin-inline:auto}
+.contact p{color:#d9d0b6}
+.contact .actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:32px}
+.contact .btn.line{color:var(--paper);border-color:var(--brass)}
+.contact .btn.line:hover{background:var(--brass);color:var(--ink)}
+.sns{display:flex;gap:18px;justify-content:center;margin-top:40px}
+.sns a{width:48px;height:48px;border:1px solid var(--brass);border-radius:50%;display:grid;place-items:center;color:var(--brass);transition:background .2s,color .2s}
+.sns a:hover{background:var(--brass);color:var(--ink)}
+.sns svg{width:22px;height:22px;fill:currentColor}
+
+footer{background:var(--ink);color:#b9b196;text-align:center;font-size:.8rem;padding:28px 16px;letter-spacing:.1em}
+
+@media (max-width:860px){
+  nav.gnav{display:none}
+  .hero{padding:88px 0 64px}
+  .hero .wrap{grid-template-columns:1fr;gap:32px}
+  .hero-title{writing-mode:horizontal-tb;letter-spacing:.14em;order:-1;justify-self:start;margin-top:8px}
+  .hero-lead{grid-template-columns:1fr}
+  section{padding:72px 0}
+  .about .grid,.feature .grid{grid-template-columns:1fr;gap:36px}
+  .about figure{aspect-ratio:4/3}
+  .rooms ul{grid-template-columns:1fr}
+  .rooms li+li{border-left:0;border-top:1px solid rgba(138,109,59,.45)}
+  .voices{grid-template-columns:1fr}
+  dl.table{grid-template-columns:1fr}
+  dl.table dt{border-bottom:0;padding-bottom:0}
+  .map-box iframe{height:320px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#top">美幌博物館</a>
+    <nav class="gnav" aria-label="ページ内メニュー">
+      <a href="#about">博物館について</a>
+      <a href="#rooms">展示室</a>
+      <a href="#voice">口コミ</a>
+      <a href="#access">アクセス</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div class="case">
+        <figure>
+          <img src="images/1.jpg" alt="オホーツクの初夏を再現した大きなジオラマのイメージ" width="1600" height="900">
+        </figure>
+        <figcaption>オホーツクの初夏を再現した、道内最大級のジオラマ</figcaption>
+      </div>
+      <h1 class="hero-title">美幌博物館</h1>
+      <div class="hero-lead">
+        <p>オホーツクの初夏が、<br>ひとつの部屋のなかに息づいています。</p>
+        <a class="btn" href="#access">アクセスを見る</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="about" id="about">
+    <div class="wrap grid">
+      <figure>
+        <img src="images/2.jpg" alt="ヒグマとキタキツネの親子の剥製展示のイメージ" width="1200" height="1500" loading="lazy">
+      </figure>
+      <div>
+        <div class="sec-head"><h2>美幌の自然と暮らしを<br>たどる総合博物館</h2></div>
+        <p class="lead">自然、考古、歴史、美術、生活文化。<br>美幌町の足もとにある物語を、幅広く展示しています。</p>
+        <p>北海道・美幌町にある総合博物館です。屈斜路湖をはじめとする土地の成り立ちから、人びとの暮らし、農業の営み、身近な生きものまで、ひとつの館のなかで順にめぐることができます。</p>
+        <p>なかでも目を引くのが、オホーツク地域の初夏を再現した道内最大級のジオラマ。ヒグマやキタキツネの親子を精巧に再現した展示は、訪れた方にとくに親しまれています。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="rooms" id="rooms">
+    <div class="wrap">
+      <div class="sec-head"><h2>館内のめぐり方</h2></div>
+      <ul>
+        <li>
+          <h3>第1展示室</h3>
+          <p class="theme">屈斜路湖と、美幌の自然・歴史</p>
+          <p>屈斜路湖をメインに、美幌の自然と歴史を紹介する展示室です。</p>
+        </li>
+        <li>
+          <h3>第2展示室</h3>
+          <p class="theme">美幌の農業と、身近な自然</p>
+          <p>美幌の農業を中心に、身近な自然を取り上げた展示室です。農機具の展示もあります。</p>
+        </li>
+        <li>
+          <h3>第3展示室</h3>
+          <p class="theme">美術ギャラリー</p>
+          <p>展示内容は時期によって入れ替わります。訪問前に最新の展示をご確認ください。</p>
+        </li>
+      </ul>
+      <p class="note">二階から螺旋階段を上ると、展望台があります。</p>
+    </div>
+  </section>
+
+  <section class="strengths" id="strengths">
+    <div class="wrap">
+      <div class="sec-head"><h2>美幌博物館の強み</h2></div>
+      <p style="max-width:40em;margin-bottom:40px">自然・歴史・芸術を網羅した総合力と、地域に根ざした調査研究・教育普及活動。それが、美幌博物館の土台です。</p>
+      <ul>
+        <li>
+          <h3>道内最大級の、精巧な自然ジオラマ</h3>
+          <p>初夏のオホーツクの森と生態系を再現した大型ジオラマ。植物の細部まで型取りして、本物そっくりに作られています。</p>
+        </li>
+        <li>
+          <h3>地域固有のコレクションと研究</h3>
+          <p>旧石器・縄文から擦文文化にいたる数万点の考古資料、北海道産の淡水魚類（脊椎動物2万点超）や昆虫・植物などの自然史資料を収蔵。町内130か所以上ある遺跡の調査など、学芸員による調査研究も活発です。</p>
+        </li>
+        <li>
+          <h3>博物館であり、美術館でもある</h3>
+          <p>北海道を代表する彫刻家・藤戸竹喜、動物写真家・前川貴行らの作品をはじめ、美術作品も多数収蔵・展示しています。</p>
+        </li>
+        <li>
+          <h3>学校連携と、手厚い教育普及</h3>
+          <p>学校の授業と連携した体験型授業の支援、月間情報誌「Green Letter」の発行、ワークショップ（プチ工房）などを通じて、地域学習やESD（持続可能な開発のための教育）の拠点となっています。</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="feature dark" id="feature">
+    <div class="wrap grid">
+      <div>
+        <div class="sec-head"><h2>古い道具と、<br>土地の記憶に出会う</h2></div>
+        <p class="lead">鍬や農機具が語るのは、<br>この土地を拓いた人びとの日々です。</p>
+        <p>農業のまちとして歩んできた美幌。館内には、暮らしの道具や農機具など、生活文化を伝える資料も並びます。来館者が少ない時間帯もあり、静かな空気のなかで、ゆっくりと展示に向き合えます。</p>
+      </div>
+      <figure>
+        <img src="images/3.jpg" alt="古い農機具が並ぶ展示室のイメージ" width="1500" height="1000" loading="lazy">
+      </figure>
+    </div>
+  </section>
+
+  <section class="history" id="history">
+    <div class="wrap grid">
+      <div class="year">1987<small>昭和62年 開館</small></div>
+      <div>
+        <div class="sec-head"><h2>創設のあゆみ</h2></div>
+        <p class="lead">先人の勇気と英知に学び、<br>未来へ向かう子供たちのために。</p>
+        <p>美幌博物館は、北海道網走郡美幌町に戸長役場が設置されてから100年目となる1987（昭和62）年に設立されました。町制施行・戸長役場開設から100年という節目を記念する、開基100周年記念事業の一環として開設された博物館です。</p>
+        <p>ふるさと美幌町の豊かな自然、歴史、芸術・美術に関わる資料や情報を収集・保存し、その成果を活かした地域学習や教育普及活動を進めることを目的としています。</p>
+        <p>詳しい沿革や取り組みは、<a href="https://www.town.bihoro.hokkaido.jp/site/museum/" target="_blank" rel="noopener">美幌町の公式ホームページ</a>でご覧いただけます。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="voice">
+    <div class="wrap">
+      <div class="sec-head"><h2>ご来館者の声</h2></div>
+      <div class="voices">
+        <article class="voice">
+          <div class="stars" aria-label="5段階評価の4"><span>★★★★</span><span class="off">★</span></div>
+          <p>外観はかなり大きな建物です。平日の13時頃訪れました。ほとんど観覧者はいませんでした。入館料は300円のようですが、JAFの会員証で無料になりました。展示室は1,2階に分かれて3室あります。ここ美幌の歴史、自然、産業について、さまざまな展示がなされています。トラクターの展示は目を引きます。美術館でもあるようで、美幌ゆかりの芸術家や、児童・生徒の作品展示もありました。かなり多くの展示物があるので、じっくり見ようとすると、けっこう時間がかかりそうです。</p>
+          <span class="src">Googleマップの口コミより</span>
+        </article>
+        <article class="voice">
+          <div class="stars" aria-label="5段階評価の5">★★★★★</div>
+          <p>平日の女満別空港からの航空便の空き時間に立ち寄らせて頂きました。これまでも仕事では何度も訪れている「美幌町」ですが、同博物館の存在は存じませんでした。JAF会員は無料、とのことでお言葉に甘えて有意義な時間を過ごさせて頂きました。
+丁寧な展示と50代の自分には「懐かしさ」を感じさせてくれるスローな時間を体験出来ます♪
+
+小さなお子さんでも楽しめるような展示です。
+展示物の写真は、美幌博物館(BIHORO MUSEUM)提供</p>
+          <span class="src">Googleマップの口コミより</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="info" id="info">
+    <div class="wrap">
+      <div class="sec-head"><h2>施設案内</h2></div>
+      <dl class="table">
+        <dt>施設名</dt><dd>美幌博物館</dd>
+        <dt>住所</dt><dd>北海道網走郡美幌町美禽253-4</dd>
+        <dt>電話番号</dt><dd><a href="tel:0152722160">0152-72-2160</a></dd>
+        <dt>入館料</dt><dd>300円<small>JAF会員は無料</small></dd>
+        <dt>休館日</dt>
+        <dd>月曜日（月曜が祝日・振替休日の場合は直後の平日）<br>国民の祝日の翌平日<br>年末年始（12月30日～1月6日）</dd>
+        <dt>撮影について</dt><dd>館内は一部を除き撮影禁止です。詳しくは館内の案内、または公式サイトでご確認ください。</dd>
+        <dt>公式サイト</dt><dd><a href="https://www.town.bihoro.hokkaido.jp/site/museum/" target="_blank" rel="noopener">https://www.town.bihoro.hokkaido.jp/site/museum/</a></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section id="access">
+    <div class="wrap">
+      <div class="sec-head"><h2>アクセス</h2></div>
+      <div class="map-box">
+        <iframe title="美幌博物館の地図" src="https://www.google.com/maps?q=%E5%8C%97%E6%B5%B7%E9%81%93%E7%B6%B2%E8%B5%B0%E9%83%A1%E7%BE%8E%E5%B9%8C%E7%94%BA%E7%BE%8E%E7%A6%BD253-4&output=embed&hl=ja" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+      <div class="map-btn">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=%E5%8C%97%E6%B5%B7%E9%81%93%E7%B6%B2%E8%B5%B0%E9%83%A1%E7%BE%8E%E5%B9%8C%E7%94%BA%E7%BE%8E%E7%A6%BD253-4" target="_blank" rel="noopener">Googleマップで開く</a>
+      </div>
+      <p class="address">北海道網走郡美幌町美禽253-4</p>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="sec-head"><h2>お問い合わせ</h2></div>
+      <p>展示内容や開館状況は、お電話またはフォームからご確認いただけます。</p>
+      <div class="actions">
+        <a class="btn" href="tel:0152722160">0152-72-2160 に電話する</a>
+        <a class="btn line" href="https://www.town.bihoro.hokkaido.jp/form/detail.php?sec_sec1=21&amp;inq=02&amp;lif_id=6848&amp;check" target="_blank" rel="noopener">問い合わせフォーム</a>
+      </div>
+      <div class="sns">
+        <a href="https://www.facebook.com/bihoro.museum/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.6-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.9v3h2.6V21h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/bihoromuseum/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7.3A4.7 4.7 0 1 0 12 16.7 4.7 4.7 0 0 0 12 7.3zm0 7.7a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm5-7.9a1.1 1.1 0 1 1-2.200 0 1.1 1.1 0 0 1 2.200 0zM21 8.200c-.1-1.600-.4-3-1.600-4.200S16.700 2.100 15.100 2C13.500 1.900 10.500 1.900 8.900 2 7.300 2.100 5.900 2.400 4.700 3.600 3.500 4.800 3.200 6.200 3.100 7.800c-.1 1.600-.1 4.600 0 6.200.1 1.600.4 3 1.600 4.200 1.200 1.200 2.600 1.500 4.200 1.600 1.600.1 4.600.1 6.200 0 1.600-.1 3-.4 4.200-1.600 1.200-1.200 1.500-2.600 1.600-4.200.1-1.600.1-4.600 0-6.200zm-1.900 9.400a3.400 3.400 0 0 1-1.900 1.900c-1.300.5-4.400.4-5.800.4s-4.500.1-5.800-.4a3.400 3.400 0 0 1-1.900-1.900c-.5-1.300-.4-4.400-.4-5.800s-.1-4.500.4-5.800a3.400 3.400 0 0 1 1.900-1.900c1.300-.5 4.400-.4 5.800-.4s4.500-.1 5.800.4a3.400 3.400 0 0 1 1.900 1.900c.5 1.300.4 4.400.4 5.800s.1 4.500-.4 5.800z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© 美幌博物館 ／ 北海道網走郡美幌町美禽253-4</footer>
+
+</body>
+</html>
